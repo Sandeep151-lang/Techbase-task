@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import Image from './components/Image';
+import Audio from './components/Audio';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App relative container">
+      <Tabs className="tab absolute">
+    <TabList className="tab-list">
+      <Tab >Images</Tab>
+      <Tab>Video</Tab>
+      <Tab>Audio</Tab>
+      <Tab></Tab>
+    </TabList>
+
+    <TabPanel>
+      <Image/>
+    </TabPanel>
+    <TabPanel>
+      <Audio/>
+    </TabPanel>
+  </Tabs>
     </div>
   );
 }
